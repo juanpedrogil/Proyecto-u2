@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".add_actividad" />
+        <activity android:name=".add_alumno" />
+        <activity android:name=".ver_alumnos" />
+        <activity android:name=".Ver_actividad"></activity>
     </application>
 
 </manifest>
