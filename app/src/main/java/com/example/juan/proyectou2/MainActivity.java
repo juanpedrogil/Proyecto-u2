@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent add_actividad_activity=new Intent(MainActivity.this,Ver_actividad.class);
+                add_actividad_activity.putExtra("alumno","");
                 startActivity(add_actividad_activity);
             }
         });

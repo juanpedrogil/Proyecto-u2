@@ -14,11 +14,13 @@ public class Ver_actividad extends AppCompatActivity {
     RecyclerView lista;
     List<ItemActividad> datos=new ArrayList<ItemActividad>();
     RecyclerView.LayoutManager layoutManager;
+    String alumno;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_actividad);
         lista=findViewById(R.id.lista);
+        alumno=getIntent().getExtras().getString("alumno");
         consultarAlumnos();
         layoutManager=new LinearLayoutManager(this);
         lista.setLayoutManager(layoutManager);
@@ -35,7 +37,13 @@ public class Ver_actividad extends AppCompatActivity {
             ItemActividad aux=new ItemActividad(actividad_data.getString(1),
                     actividad_data.getString(2),actividad_data.getString(3),
                     actividad_data.getString(4),actividad_data.getString(5));
-            datos.add(aux);
+            if(!alumno.equals("")){
+                if(aux.getNombre().equals(alumno)){
+                    datos.add(aux);
+                }
+            }else {
+                datos.add(aux);
+            }
         }
         ordenar();
         Adapter_Actividad adapter=new Adapter_Actividad(datos);

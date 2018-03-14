@@ -2,6 +2,7 @@ package com.example.juan.proyectou2;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ public class ver_alumnos extends AppCompatActivity {
     RecyclerView lista;
     List<ItemAlumno> datos=new ArrayList<ItemAlumno>();
     RecyclerView.LayoutManager layoutManager;
+    ConstraintLayout constraintLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
